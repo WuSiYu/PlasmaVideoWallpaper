@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <id>org.kde.plasma.videowallpaper</id>
+    <name>Video</name>
+    <url type="homepage">https://plasma.kde.org/</url>
+    <developer_name>%{AUTHOR} &lt;%{EMAIL}&gt;</developer_name>
+    <icon type="stock">plasma</icon>
+    <project_license>LGPLv2+</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+</component>

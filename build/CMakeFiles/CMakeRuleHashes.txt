@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+9c835296dad00aaa86a8e1bf7aa76b1f org.kde.plasma.videowallpaper-wallpapers-metadata.json

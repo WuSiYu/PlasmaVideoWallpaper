@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Video
+
+Type=Service
+Icon=plasma
+
+X-KDE-ServiceTypes=Plasma/Wallpaper
+X-KDE-PluginInfo-Author=WuSiYu
+X-KDE-PluginInfo-Email=wu.siyu@hotmail.com
+X-KDE-PluginInfo-Name=org.kde.plasma.videowallpaper
+X-KDE-PluginInfo-License=LGPLv2+
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://plasma.kde.org/
+X-Plasma-MainScript=ui/main.qml

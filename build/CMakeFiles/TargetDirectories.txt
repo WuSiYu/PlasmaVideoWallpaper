@@ -1,0 +1,6 @@
+/home/wusiyu/projects/VideoWallpaper/build/CMakeFiles/install/strip.dir
+/home/wusiyu/projects/VideoWallpaper/build/CMakeFiles/install/local.dir
+/home/wusiyu/projects/VideoWallpaper/build/CMakeFiles/edit_cache.dir
+/home/wusiyu/projects/VideoWallpaper/build/CMakeFiles/rebuild_cache.dir
+/home/wusiyu/projects/VideoWallpaper/build/CMakeFiles/list_install_components.dir
+/home/wusiyu/projects/VideoWallpaper/build/CMakeFiles/install.dir
