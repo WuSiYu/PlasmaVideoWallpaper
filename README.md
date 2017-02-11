@@ -1,5 +1,6 @@
 # Plasma Video Wallpaper
 ![Screenshot](http://i.imgur.com/mFf8NZp.jpg)
+You can pause or resume the video by click the wallpaper
 Build instructions
 ----------
 ```bash

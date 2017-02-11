@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 by WuSiYu <%{EMAIL}>
+ * Copyright (C) 2017 by WuSiYu <wu.siyu@hotmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as
@@ -23,9 +23,10 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
     id: root
-
+    property var playing: true
+    
 	MediaPlayer {
-        id: mediaplayer
+        id: mediaPlayer
         autoPlay: true
         loops: MediaPlayer.Infinite
         volume: wallpaper.configuration.VideoVolume/100
@@ -35,6 +36,12 @@ Item {
     VideoOutput {
         fillMode: VideoOutput.PreserveAspectCrop
         anchors.fill: parent
-        source: mediaplayer
+        source: mediaPlayer
+    }
+    
+    MouseArea {
+        id: playArea
+        anchors.fill: parent
+        onPressed: mediaPlayer.playbackState === MediaPlayer.PlayingState ? mediaPlayer.pause() : mediaPlayer.play()
     }
 }

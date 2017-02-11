@@ -8,3 +8,8 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 find_package(KF5Plasma REQUIRED)
 
 plasma_install_package(package org.kde.plasma.videowallpaper wallpapers wallpaper)
+
+install(DIRECTORY "./locale/"
+    DESTINATION "/usr/local/share/locale"
+    FILES_MATCHING PATTERN "*/LC_MESSAGES/*.mo"
+)

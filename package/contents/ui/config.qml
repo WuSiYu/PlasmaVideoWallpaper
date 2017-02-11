@@ -51,6 +51,7 @@ ColumnLayout {
 			onClicked: fileDialog.open()
         }
     }
+
     RowLayout {
         spacing: units.largeSpacing / 2
 
@@ -65,14 +66,27 @@ ColumnLayout {
 			id: videoVolume
 			minimumValue: 0
 			maximumValue: 100
-			onValueChanged: cfg_VideoVolume = videoVolume.value
+		}
+    }
+
+    RowLayout {
+        spacing: units.largeSpacing / 2
+
+        QtControls.Label {
+            Layout.minimumWidth: width
+            Layout.maximumWidth: width
+            width: formAlignment - units.largeSpacing
+            horizontalAlignment: Text.AlignRight
+        }
+		QtControls.Label {
+			text: i18nd("plasma_wallpaper_org.kde.plasma.videowallpaper", "You can pause or resume the video by click the wallpaper")
 		}
     }
 
 	FileDialog {
 		id: fileDialog
-		title: i18nd("plasma_applet_org.kde.video", "Pick a video file")
-		nameFilters: "Video files (*.mp4 *.mpg *.ogg *.mov *.webm *.flv *.matroska *.avi)"
+		title: i18nd("plasma_wallpaper_org.kde.plasma.videowallpaper", "Open a video")
+		nameFilters: "Video files (*.mp4 *.mpg *.ogg *.mov *.webm *.flv *.matroska *.avi *.mkv)"
 		onAccepted: cfg_VideoPath = fileDialog.fileUrls[0]
 	}
 

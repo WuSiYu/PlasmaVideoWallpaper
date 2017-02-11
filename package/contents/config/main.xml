@@ -6,11 +6,11 @@
     <kcfgfile name=""/>
 
     <group name="General">
-    <entry name="VideoPath" type="String">
+        <entry name="VideoPath" type="String">
             <label>Video file path</label>
             <default></default>
         </entry>
-        <entry name="VideoVolume" type="Real">
+        <entry name="VideoVolume" type="int">
             <label>Video volume</label>
             <default>50</default>
         </entry>
