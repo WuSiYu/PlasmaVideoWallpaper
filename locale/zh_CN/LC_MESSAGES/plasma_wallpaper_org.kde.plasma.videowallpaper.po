@@ -20,8 +20,11 @@ msgstr "视频："
 msgid "Volume:"
 msgstr "音量："
 
-msgid "You can pause or resume the video by click the wallpaper"
-msgstr "你可以点击壁纸来暂停或播放视频"
+msgid "Prevent stuck on loop (more memory cost, apply on next loop)"
+msgstr "防止循环时的黑屏卡顿（更多的内存消耗，下次循环时生效）"
+
+msgid "You can pause or resume the video by clicking wallpaper"
+msgstr "你可以点击壁纸来暂停或继续播放视频"
 
 msgid "Open a video"
 msgstr "打开视频"

@@ -1,16 +1,31 @@
-# Plasma Video Wallpaper
+Plasma Video Wallpaper
+=========================
+
+A KDE Plasma 5 wallpaper plugin which can let you using a video as the wallpaper
+
 ![Screenshot](http://i.imgur.com/mFf8NZp.jpg)
-You can pause or resume the video by click the wallpaper
-Build instructions
-----------
+
+
+Build and install instructions
+---------------------------------
+
 ```bash
 cmake .
 make
 sudo make install
 ```
-Restart plasma to load the wallpaper
-(in a terminal or in krunner type:
-`kquitapp plasmashell`
-and then
-`plasmashell`)
-then go to wallpaper settings and select it
+If it says `Could not find a package configuration file provided by "ECM" ` during the `cmake .`, try to install `extra-cmake-modules` package
+
+Restart plasmashell
+(in a terminal or in krunner type: `kquitapp plasmashell` and then `plasmashell`)
+
+
+Usage
+--------
+- Open desktop settings
+- Select `Video` in `Wallpaper Type`
+- Choose a video file
+
+![Settings](https://i.imgur.com/NhNPz1h.png)
+
+You can pause or resume the video by clicking wallpaper, but it won't work if your `Layout` is set to `Folder View`

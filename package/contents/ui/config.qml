@@ -30,6 +30,7 @@ ColumnLayout {
     id: root
     property alias cfg_VideoPath: videoPath.text
     property alias cfg_VideoVolume: videoVolume.value
+    property alias cfg_DualPlayback: dualPlayback.checked
 
     RowLayout {
         spacing: units.largeSpacing / 2
@@ -78,8 +79,23 @@ ColumnLayout {
             width: formAlignment - units.largeSpacing
             horizontalAlignment: Text.AlignRight
         }
+		QtControls.CheckBox {
+			id: dualPlayback
+			text: i18nd("plasma_wallpaper_org.kde.plasma.videowallpaper", "Prevent stuck on loop (more memory cost, apply on next loop)")
+		}
+    }
+    
+    RowLayout {
+        spacing: units.largeSpacing / 2
+
+        QtControls.Label {
+            Layout.minimumWidth: width
+            Layout.maximumWidth: width
+            width: formAlignment - units.largeSpacing
+            horizontalAlignment: Text.AlignRight
+        }
 		QtControls.Label {
-			text: i18nd("plasma_wallpaper_org.kde.plasma.videowallpaper", "You can pause or resume the video by click the wallpaper")
+			text: i18nd("plasma_wallpaper_org.kde.plasma.videowallpaper", "You can pause or resume the video by clicking wallpaper")
 		}
     }
 

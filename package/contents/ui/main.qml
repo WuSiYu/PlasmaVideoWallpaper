@@ -18,30 +18,86 @@
  */
 
 import QtQuick 2.1
-import QtMultimedia 5.5
+import QtMultimedia 5.11
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
-    id: root
-    property var playing: true
-    
+	id: root
+
 	MediaPlayer {
-        id: mediaPlayer
-        autoPlay: true
-        loops: MediaPlayer.Infinite
-        volume: wallpaper.configuration.VideoVolume/100
-        source: wallpaper.configuration.VideoPath
-    }
+		id: player1
+		volume: wallpaper.configuration.VideoVolume/100
+		source: wallpaper.configuration.VideoPath
+		onStopped: {
+            if(wallpaper.configuration.DualPlayback){
+                videoOutput1.visible = false
+                videoOutput2.visible = true
+                if(player2.source != wallpaper.configuration.VideoPath){
+                    player2.source = wallpaper.configuration.VideoPath
+                }
+                player1.play()
+                player1.pause()
+                player2.play()
+            }else{
+                if(player2.source == wallpaper.configuration.VideoPath){
+                    player2.stop()
+                    player2.source = ''
+                }
+                player1.play()
+            }
+		}
+	}
+
+	MediaPlayer {
+		id: player2
+		volume: wallpaper.configuration.VideoVolume/100
+		onStopped: {
+            videoOutput2.visible = false
+            videoOutput1.visible = true
+            player2.play()
+            player2.pause()
+			player1.play()
+		}
+	}
 
     VideoOutput {
-        fillMode: VideoOutput.PreserveAspectCrop
-        anchors.fill: parent
-        source: mediaPlayer
-    }
-    
-    MouseArea {
-        id: playArea
-        anchors.fill: parent
-        onPressed: mediaPlayer.playbackState === MediaPlayer.PlayingState ? mediaPlayer.pause() : mediaPlayer.play()
+		id: videoOutput1
+		fillMode: VideoOutput.PreserveAspectCrop
+		anchors.fill: parent
+		source: player1
+	}
+
+	VideoOutput {
+		id: videoOutput2
+		fillMode: VideoOutput.PreserveAspectCrop
+		anchors.fill: parent
+		source: player2
+	}
+
+	MouseArea {
+		id: playArea
+		anchors.fill: parent
+        onPressed: {
+            if( videoOutput1.visible == true ){
+                player1.playbackState === MediaPlayer.PlayingState ? player1.pause() : player1.play()
+            }else{
+                player2.playbackState === MediaPlayer.PlayingState ? player2.pause() : player2.play()
+            }
+        }
+	}
+
+	Component.onCompleted: {
+        videoOutput2.visible = false
+        videoOutput1.visible = true
+        
+        if(wallpaper.configuration.DualPlayback){
+            player2.source = wallpaper.configuration.VideoPath
+            player2.play()
+            player2.pause()
+        }
+        player1.play()
     }
 }
+
+	
+

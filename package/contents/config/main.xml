@@ -14,6 +14,10 @@
             <label>Video volume</label>
             <default>50</default>
         </entry>
+        <entry name="DualPlayback" type="bool">
+            <label>Dual Playback</label>
+            <default>true</default>
+        </entry>
     </group>
 
 </kcfg>
